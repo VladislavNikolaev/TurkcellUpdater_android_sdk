@@ -39,20 +39,13 @@ public class SplashActivity extends Activity {
         startUpdateCheckButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                v.setEnabled(false);
-                // Eski yontem:
-                //                UpdaterDialogManager updaterUI = new UpdaterDialogManager(serverAddressEditText.getText().toString());
-                //                updaterUI.setPostProperties(postPropertiesCheckBox.isChecked());
-                //                updaterUI.setPostProperties(true);
-                //                updaterUI.startUpdateCheck(SplashActivity.this, SplashActivity.this);
-                //////////////
-                //Yeni yontem:
+                TurkcellUpdater updater = new TurkcellUpdater(SplashActivity.this, serverAddressEditText.getText().toString());
+                updater.setTurkcellUpdaterCallback(mTurkcellUpdaterCallback);
+                updater.setDefaultDialogCallback(mUpdaterUiListener);
+                updater.check(false);
             }
         });
-        TurkcellUpdater updater = new TurkcellUpdater(SplashActivity.this, "http://10.0.2.2/hop.json");
-        updater.setTurkcellUpdaterCallback(mTurkcellUpdaterCallback);
-        updater.setDefaultDialogCallback(mUpdaterUiListener);
-        updater.check(false);
+
     }
 
     private TurkcellUpdaterCallback mTurkcellUpdaterCallback = new TurkcellUpdaterCallback() {
