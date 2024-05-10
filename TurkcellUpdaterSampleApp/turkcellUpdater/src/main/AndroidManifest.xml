@@ -3,5 +3,10 @@
     android:versionName="1.2.4" >
 
 	<uses-permission android:name="android.permission.INTERNET" />
+
+	<application>
+		<uses-library android:name="org.apache.http.legacy" android:required="false"/>
+
+	</application>
     
 </manifest>
