@@ -26,7 +26,7 @@ Add below dependency to your app's build.gradle file.
 <pre>
 <code>
 dependencies {
-	compile 'com.github.Turkcell:TurkcellUpdater_android_sdk:1.3.0'
+	implementation 'com.github.Turkcell:TurkcellUpdater_android_sdk:1.3.0'
 }
 </code>
 </pre>
