@@ -26,7 +26,7 @@ Add below dependency to your app's build.gradle file.
 <pre>
 <code>
 dependencies {
-	compile 'com.github.Turkcell:TurkcellUpdater_android_sdk:1.2.4'
+	compile 'com.github.Turkcell:TurkcellUpdater_android_sdk:1.3.0'
 }
 </code>
 </pre>
@@ -55,82 +55,6 @@ This documents describes usage and structure configuration files used by Turkcel
 			 },
 			 "targetVersionCode": 1,
 			 "targetGooglePlay": true
-		}
-	]
-}
-</code>
-</pre>
-
-<h4>Updating an Android application to a new version served as APK file</h4>
-<pre>
-<code>
-{
-	"packageName": "com.example.app1",
-	"updates": [
-		{
-			 "descriptions": {
-				 "tr": {
-					 "message": "Yeni versiyon yayınlanmıştır",
-					 "positive_button": "Güncelle",
-					 "negative_button": "İptal"
-				 },
-				 "*": {
-					 "message": "New version available",
-					 "positive_button": "Update",
-					 "negative_button": "Cancel"
-				 }
-			 },
-			 "targetVersionCode": 1,
-			 "targetPackageUrl": "http://example.com/app1-v10.apk"
-		}
-	]
-}
-</code>
-</pre>
-
-<h4>Updating an Android application depending on where current application is installed from</h4>
-<pre>
-<code>
-{
-	"packageName": "com.example.app1",
-	"updates": [
-		{
-			"filters": {
-				"appInstallerPackageName": "com.android.vending"
-			},
-			"descriptions": {
-				 "tr": {
-					 "message": "Yeni versiyon yayınlanmıştır",
-					 "positive_button": "Güncelle",
-					 "negative_button": "İptal"
-				 },
-				"*": {
-					"message": "New version available",
-					"positive_button": "Update",
-					"negative_button": "Cancel"
-				}
-			},
-			"targetVersionCode": 1,
-			"targetGooglePlay": true
-		},
-		{
-			"filters": {
-				"appInstallerPackageName": "!com.android.vending"
-			},
-			 "descriptions": {
-				 "tr": {
-					 "message": "Yeni versiyon yayınlanmıştır",
-					 "positive_button": "Güncelle",
-					 "negative_button": "İptal"
-				 },
-				 "*": {
-					 "message": "New version available",
-					 "positive_button": "Update",
-					 "negative_button": "Cancel"
-				 }
-			 },
-			 "targetVersionCode": 1,
-			 "targetPackageUrl": "http://example.com/app1-v10.apk"
 		}
 	]
 }
@@ -357,27 +281,6 @@ Type: Object
 	"packageName": "com.example.app1",
 	"updates": [
 		{
-			 "descriptions": {
-				 "tr": {
-					 "message": "Yeni versiyon yayinlandi",
-					 "whatIsNew": "Bazi hatalar duzeltildi",
-					 "warnings": "Yeni versiyon ek izinler gerektiriyor",
-					 "positive_button": "Tamam"
-				 },
-				 "*": {
-					 "message": "New version available",
-					 "whatIsNew": "Minor bug fixes",
-					 "warnings": "New version requires additional privileges",
-					 "positive_button": "Ok"
-				 }
-			 },
-			 "targetVersionCode": 10,
-			 "targetPackageUrl": "http://example.com/app1-v10.apk",
-			 "forceUpdate": false
-		}
-	],
-	"messages": [
-		{
 			"descriptions": {
 				"tr": {
 					"title": "Teklif",
@@ -476,16 +379,6 @@ For iOS : If device language is English but the application language is Turkish 
 </tr>
 
 <tr>
-<td>targetPackageUrl</td>
-<td>String</td>
-<td>null</td>
-<td>Android</td>
-<td>URL of APK package of new version.</td>
-<td>See <a href="#updateEntryNote2">Note #2</a></td>
-<td>1</td>
-</tr>
-
-<tr>
 <td>forceUpdate</td>
 <td>Boolean</td>
 <td>false</td>
@@ -524,7 +417,6 @@ For iOS : iTunes or Corporate Repository URL of the application.</td>
 	<li><code>forceExit</code> is <code>true</code></li>
 	<li><code>targetGooglePlay</code> is <code>true</code></li>
 	<li><code>targetWebsiteUrl</code> is not <code>null</code> or empty</li>
-	<li><code>targetPackageUrl</code> is not <code>null</code> or empty</li>
 	</ul>
 </li>
 </ol>
